@@ -106,5 +106,136 @@ var x = 12; // undefined</code></pre>
 let y = 24; // ❌ ReferenceError</code></pre>
 
 <hr>
+  <h1>JavaScript Data Types</h1>
+
+    <p>This document explains JavaScript data types and how they behave when copied or assigned.</p>
+
+    <h2>Two Types of Data Types</h2>
+    <ul>
+        <li>Primitive Data Types</li>
+        <li>Non-Primitive (Reference) Data Types</li>
+    </ul>
+
+    <h2>1. Primitive Data Types</h2>
+    <p>Primitive data types store real values. When copied, a new value is created.</p>
+
+    <h3>Example</h3>
+    <pre><code>
+let a = 12;
+let b = a;
+a = a + 3;
+    </code></pre>
+
+    <h3>Types of Primitive Data Types</h3>
+
+    <h4>String</h4>
+    <pre><code>
+let d = "name";
+d = 'username';
+d = `firstname`;
+    </code></pre>
+
+    <h4>Number</h4>
+    <pre><code>
+let e = 12;
+e = 12.25;
+    </code></pre>
+
+    <h4>Boolean</h4>
+    <pre><code>
+let f = true;
+f = false;
+    </code></pre>
+
+    <h4>Null</h4>
+    <pre><code>
+let g = null;
+    </code></pre>
+
+    <h4>Undefined</h4>
+    <pre><code>
+let h;
+    </code></pre>
+
+    <h4>Symbol</h4>
+    <pre><code>
+let u1 = Symbol("uid");
+let u2 = Symbol("uid");
+
+console.log(u1 === u2); // false
+
+let obj = { uid: 1, name: "test", email: "test@test.com" };
+let u3 = Symbol("uid");
+obj[u3] = "001";
+    </code></pre>
+
+    <h4>BigInt</h4>
+    <pre><code>
+let number = 9007199254740991;
+number = number + 6;
+
+let num2 = 9007199254740991n;
+num2 + 3n;
+    </code></pre>
+
+    <h2>2. Non-Primitive Data Types (Reference Data Types)</h2>
+    <p>Non-primitive data types store references to memory locations.</p>
+
+    <h3>Example</h3>
+    <pre><code>
+let temp_a = [1, 2, 3];
+let temp_b = temp_a;
+
+temp_b.pop();
+    </code></pre>
+
+    <h3>Types of Non-Primitive Data Types</h3>
+
+    <h4>Arrays</h4>
+    <pre><code>
+let temp_array = ["name", "age", "phone_number"];
+    </code></pre>
+
+    <h4>Objects</h4>
+    <pre><code>
+let obj = {
+    name: "test",
+    age: 9,
+    phone_number: 558998554
+};
+    </code></pre>
+
+    <h4>Functions</h4>
+    <pre><code>
+function name(params) {
+    // function body
+}
+    </code></pre>
+
+    <h2>Key Differences</h2>
+    <table>
+        <tr>
+            <th>Primitive</th>
+            <th>Non-Primitive</th>
+        </tr>
+        <tr>
+            <td>Copy by value</td>
+            <td>Copy by reference</td>
+        </tr>
+        <tr>
+            <td>Immutable</td>
+            <td>Mutable</td>
+        </tr>
+        <tr>
+            <td>Stores actual value</td>
+            <td>Stores memory reference</td>
+        </tr>
+    </table>
+
+    <h2>Conclusion</h2>
+    <p>
+        Primitive data types create independent copies, while non-primitive data types share the same reference.
+        Understanding this concept is essential for writing bug-free JavaScript code.
+    </p>
 </body>
 </html>

@@ -59,7 +59,7 @@ let num2 = 9007199254740991n;
 num2 + 3n
 
 // <---------Non -Primitive Data Tyeps--------->
-//types: arrays [], objects {}, functions ()
+// types: arrays [], objects {}, functions ()
 let temp_array = ["name", "age", "phone_number"];
 let obj = {name:"test", age: 9, phone_number:558998554}
 function name(params) {
@@ -69,9 +69,9 @@ function name(params) {
 let temp_d = "name";
 temp_d = 123;
 temp_d = {};
-// javascript  --> typescript
-// typeof quirks
-// typeof 12
+javascript  --> typescript
+typeof quirks
+typeof 12
 // check type of variable use --> ex. typeof NaN, typeof null , 1 + "1", 1 == "1", 1 ==="1"
 // why typeof NaN --> number
 // Nan is a failed number operations that why that type is number
@@ -80,3 +80,44 @@ temp_d = {};
 // type coeration
 // "5" + 1
 // "5" - 1
+
+// Truthy Vs Falsy Values
+// 0 false "" null undefined NaN document.all -->false
+// ex. !!0 -- check value is true and false
+// ex. if(null){}, js convert it into false
+// ex. if(-1){}, js convert it into true
+//all --> true
+
+// Example 1 :
+console.log(true + false)
+// output: 1
+
+// Example 2 :
+console.log(null + 1)
+// output: 1
+
+// Example 3 :
+console.log("12" + 12)
+// output: 1212
+
+// Example 4 :
+console.log(!!undefined)
+// output: false
+
+// Example 5 :
+console.log("12" - 1)
+//output: 11
+
+// Example 6 :
+// why typeof NaN --> number
+// NaN is a failed number oprations that why that type is number
+console.log("hello" + 5)
+// output: hello5
+
+// Example 7 :
+// Undefined vs Null
+let x;
+console.log(x);
+let y = null;
+console.log(y);
+// Output: x = undefined , y = null

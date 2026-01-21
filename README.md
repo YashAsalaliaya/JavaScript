@@ -237,5 +237,347 @@ function name(params) {
         Primitive data types create independent copies, while non-primitive data types share the same reference.
         Understanding this concept is essential for writing bug-free JavaScript code.
     </p>
+
+<h1>JavaScript Operators</h1>
+<p>This document explains JavaScript operators with simple definitions and examples.</p>
+
+<hr>
+
+<h2>1. Arithmetic Operators</h2>
+<ul>
+    <li><code>+</code> Addition & Concatenation</li>
+    <li><code>-</code> Subtraction</li>
+    <li><code>*</code> Multiplication</li>
+    <li><code>/</code> Division</li>
+    <li><code>%</code> Modulus (Remainder)</li>
+    <li><code>**</code> Exponentiation</li>
+</ul>
+
+<pre>
+1 + 2        // 3
+"user" + "name" // username
+12 % 4       // 0
+9 % 2        // 1
+2 ** 3       // 8
+</pre>
+
+<hr>
+
+<h2>2. Comparison Operators</h2>
+<p>Comparison operators return <strong>true</strong> or <strong>false</strong>.</p>
+
+<ul>
+    <li><code>==</code> Equal (value only)</li>
+    <li><code>===</code> Strict Equal (value + type)</li>
+    <li><code>!=</code> Not Equal</li>
+    <li><code>!==</code> Strict Not Equal</li>
+    <li><code>&gt;</code> Greater Than</li>
+    <li><code>&lt;</code> Less Than</li>
+    <li><code>&gt;=</code> Greater Than or Equal</li>
+    <li><code>&lt;=</code> Less Than or Equal</li>
+</ul>
+
+<pre>
+12 == "12"    // true
+12 === "12"   // false
+12 !== "12"   // true
+</pre>
+
+<hr>
+
+<h2>3. Assignment Operators</h2>
+
+<pre>
+let a = 10;
+a += 5;   // 15
+a -= 3;   // 12
+a *= 2;   // 24
+a /= 4;   // 6
+a %= 5;   // 1
+</pre>
+
+<hr>
+
+<h2>4. Logical Operators</h2>
+
+<ul>
+    <li><code>&&</code> AND</li>
+    <li><code>||</code> OR</li>
+    <li><code>!</code> NOT</li>
+</ul>
+
+<pre>
+true && true   // true
+true && false  // false
+true || false  // true
+!true          // false
+!!12           // true
+</pre>
+
+<hr>
+
+<h2>5. Unary Operators</h2>
+
+<ul>
+    <li><code>+</code> Convert string to number</li>
+    <li><code>-</code> Negation</li>
+    <li><code>!</code> Logical NOT</li>
+    <li><code>typeof</code> Check data type</li>
+    <li><code>++</code> Increment</li>
+    <li><code>--</code> Decrement</li>
+</ul>
+
+<pre>
++"5"          // 5
++"Name"       // NaN
+typeof "JS"   // string
+typeof NaN    // number
+typeof null   // object
+</pre>
+
+<hr>
+
+<h2>6. Ternary Operator</h2>
+
+<pre>
+condition ? valueIfTrue : valueIfFalse
+</pre>
+
+<pre>
+let score = 78;
+let grade = score >= 90 ? "A" :
+            score >= 80 ? "B" :
+            score >= 70 ? "C" : "D";
+</pre>
+
+<hr>
+
+<h2>7. Truthy & Falsy Example</h2>
+
+<pre>
+let a = 0;
+
+if (a) {
+    console.log("Truthy");
+} else {
+    console.log("Falsy");
+}
+// Output: Falsy
+</pre>
+
+<hr>
+
+<h2>8. Increment & Decrement Examples</h2>
+
+<pre>
+let j = 4;
+let k = j++;
+// j = 5, k = 4
+
+let n = 10;
+console.log(n--); // 10
+console.log(n);   // 9
+</pre>
+
+<hr>
+
+<h2>9. Function Example</h2>
+
+<pre>
+let likes = 100;
+
+function likePost() {
+    ++likes;
+}
+
+console.log(likePost()); // undefined
+console.log(likes);      // 101
+</pre>
+
+<hr>
+
+<h2>10. Key Notes</h2>
+<ul>
+    <li><code>typeof</code> → Use for primitive data types</li>
+    <li><code>instanceof</code> → Use for reference data types</li>
+    <li><code>Array instanceof Array</code> → true</li>
+</ul>
+
+<hr>
+<h2>Example 1: Logical AND (&&)</h2>
+<pre>
+let x = 10;
+let y = 20;
+
+if (x > 5 && y > 5) {
+    console.log("Both are greater than 5");
+} else {
+    console.log("One or both are not greater than 5");
+}
+</pre>
+<p><b>Output:</b> Both are greater than 5</p>
+
+<hr>
+
+<h2>Example 2: Logical OR (||)</h2>
+<pre>
+let isAdmin = true;
+let isLoggedIn = false;
+
+if (isAdmin || isLoggedIn) {
+    console.log("Access granted");
+} else {
+    console.log("Access Denied");
+}
+</pre>
+<p><b>Output:</b> Access granted</p>
+
+<hr>
+
+<h2>Example 3: Logical NOT (!)</h2>
+<pre>
+let temp = 35;
+
+if (!(temp > 30)) {
+    console.log("Hot day");
+} else {
+    console.log("Pleasant day");
+}
+</pre>
+<p><b>Output:</b> Pleasant day</p>
+
+<hr>
+
+<h2>Example 4: Falsy Value</h2>
+<pre>
+let a = 0;
+
+if (a) {
+    console.log("Truthy value");
+} else {
+    console.log("Falsy value");
+}
+</pre>
+<p><b>Output:</b> Falsy value</p>
+
+<hr>
+
+<h2>Example 5: Ternary Operator (Grades)</h2>
+<pre>
+let score = 78;
+let grade = score >= 90 ? "A" :
+            score >= 80 ? "B" :
+            score >= 70 ? "C" : "D";
+
+console.log("Grade:", grade);
+</pre>
+<p><b>Output:</b> Grade: C</p>
+
+<hr>
+
+<h2>Example 6: Ternary Operator (Status)</h2>
+<pre>
+let points = 120;
+let status = points >= 100 ? "Gold" :
+             points >= 50 ? "Silver" : "Bronze";
+
+console.log("Status:", status);
+</pre>
+<p><b>Output:</b> Status: Gold</p>
+
+<hr>
+
+<h2>Example 7: AND with Ternary</h2>
+<pre>
+let loggedIn = true;
+let hasToken = false;
+
+let access = loggedIn && hasToken ? "Allow" : "Deny";
+console.log("Access:", access);
+</pre>
+<p><b>Output:</b> Access: Deny</p>
+
+<hr>
+
+<h2>Example 8 & 9: Increment Operator</h2>
+<pre>
+let b = 5;
+b++;
+console.log(b); // 6
+
+let c = 8;
+++c;
+console.log(c); // 9
+</pre>
+
+<hr>
+
+<h2>Example 10: Post Increment</h2>
+<pre>
+let j = 4;
+let k = j++;
+console.log(j, k);
+</pre>
+<p><b>Output:</b> 5 4</p>
+
+<hr>
+
+<h2>Example 11: Pre Increment</h2>
+<pre>
+let l = 4;
+let m = ++b;
+console.log(l, m);
+</pre>
+<p><b>Output:</b> 4 5</p>
+
+<hr>
+
+<h2>Example 12: Post Decrement</h2>
+<pre>
+let n = 10;
+console.log(n--);
+console.log(n);
+</pre>
+<p><b>Output:</b> 10<br>9</p>
+
+<hr>
+
+<h2>Example 13: Mixed Increment</h2>
+<pre>
+let o = 5;
+let result = o++ + ++o;
+console.log(result);
+</pre>
+<p><b>Output:</b> 12</p>
+
+<hr>
+
+<h2>Example 14: Function without Return</h2>
+<pre>
+let likes = 100;
+
+function likePost() {
+    ++likes;
+}
+
+console.log(likePost());
+console.log(likes);
+</pre>
+<p><b>Output:</b> undefined<br>101</p>
+
+<hr>
+
+<h2>Example 15: Comparison with Post Decrement</h2>
+<pre>
+let count = 5;
+
+if (count-- === 5) {
+    console.log("Matched");
+} else {
+    console.log("Not Matched");
+}
+</pre>
+<p><b>Output:</b> Matched</p>
+
 </body>
 </html>

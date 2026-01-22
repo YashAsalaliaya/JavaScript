@@ -578,6 +578,282 @@ if (count-- === 5) {
 }
 </pre>
 <p><b>Output:</b> Matched</p>
+<h1>Control Flow Statements in JavaScript</h1>
+
+<p>This project demonstrates the usage of JavaScript control flow statements such as
+<b>if</b>, <b>if-else</b>, <b>else-if</b>, <b>switch-case</b>, and <b>early return patterns</b>,
+along with practical examples.</p>
+
+<hr>
+
+<h2>1. If Statement</h2>
+<p>The <code>if</code> statement executes code only when the condition is true.</p>
+
+<pre>
+if (12 < 13) {
+    console.log(true);
+}
+</pre>
+
+<p>If the condition is false, the code inside the block will not run.</p>
+
+<hr>
+
+<h2>2. If-Else Statement</h2>
+<p>The <code>if-else</code> statement executes one block if the condition is true,
+otherwise the <code>else</code> block runs.</p>
+
+<pre>
+if (12 < 13) {
+    console.log(true);
+} else {
+    console.log(false);
+}
+</pre>
+
+<hr>
+
+<h2>3. If – Else If – Else Statement</h2>
+<p>Used when multiple conditions need to be checked.</p>
+
+<pre>
+if (loggedin && admin) {
+    console.log("welcome admin");
+} else if (loggedin) {
+    console.log("welcome user");
+} else {
+    console.log("go to login page");
+}
+</pre>
+
+<hr>
+
+<h2>4. Switch Case Statement</h2>
+<p>The <code>switch</code> statement compares a value against multiple cases.</p>
+
+<pre>
+switch ('First50') {
+    case 'First50':
+        console.log("50% off on First Order");
+        break;
+    case 'BoGo':
+        console.log("Buy one get one");
+        break;
+    case 'BlackFriday':
+        console.log("It's Black Friday Sale");
+        break;
+    default:
+        console.log("Offer Not Valid");
+}
+</pre>
+
+<hr>
+
+<h2>5. Early Return Pattern</h2>
+<p>Early return improves readability by returning results as soon as a condition is met.</p>
+
+<pre>
+function score2(value) {
+    if (value < 60) return "Value is less than 60";
+    else if (value < 70) return "Value is less than 70";
+    else if (value < 80) return "Value is less than 80";
+    else if (value < 90) return "Value is less than 90";
+    else return "Value is more than 90";
+}
+</pre>
+
+<hr>
+
+<h2>6. Example 1: Switch Case without Break</h2>
+<p>Demonstrates fall-through behavior when <code>break</code> is missing.</p>
+
+<pre>
+let A = 2;
+switch ('A') {
+    case '2':
+        console.log("Two");
+    case '3':
+        console.log("Three");
+}
+</pre>
+
+<hr>
+
+<h2>7. Example 2: Student Grade Calculator</h2>
+<p>Returns grades based on student marks.</p>
+
+<pre>
+function getGrade(score) {
+    if (score >= 90 && score <= 100) return "A+";
+    else if (score >= 80) return "A";
+    else if (score >= 70) return "B";
+    else if (score >= 60) return "C";
+    else if (score >= 33) return "D";
+    else if (score >= 0) return "Fail";
+    else return "Invalid Marks";
+}
+</pre>
+
+<hr>
+
+<h2>8. Example 3: Rock Paper Scissors Game</h2>
+<p>A simple game logic using conditional statements.</p>
+
+<pre>
+function rps2(user, computer) {
+    if (user === computer) return "it's a tie.";
+    if (user === "rock" && computer === "scissor") return "user wins";
+    if (user === "scissor" && computer === "paper") return "user wins";
+    if (user === "paper" && computer === "rock") return "user wins";
+    return "computer wins";
+}
+</pre>
+
+<hr>
+
+<h1>Loops in JavaScript</h1>
+
+<p>This document explains different types of loops in JavaScript and demonstrates
+how to use them with practical examples.</p>
+
+<hr>
+
+<h2>What are Loops?</h2>
+<p>Loops are used to <b>repeat a block of code</b> until a specified condition becomes false.</p>
+
+<p>Examples:</p>
+<ul>
+    <li>Printing numbers from 1 to 10</li>
+    <li>Repeating a message multiple times</li>
+</ul>
+
+<hr>
+
+<h2>1. For Loop</h2>
+<p>The <code>for</code> loop is used when you know <b>how many times</b> you want to repeat the code.</p>
+
+<h3>Syntax</h3>
+<pre>
+for (start; condition; change) {
+    // code
+}
+</pre>
+
+<h3>Example: Print 1 to 10</h3>
+<pre>
+for (let i = 1; i <= 10; i++) {
+    console.log(i);
+}
+</pre>
+
+<h3>Example: Print 20 to 10</h3>
+<pre>
+for (let i = 20; i >= 10; i--) {
+    console.log(i);
+}
+</pre>
+
+<hr>
+
+<h2>2. While Loop</h2>
+<p>The <code>while</code> loop runs as long as the condition is true.</p>
+
+<h3>Syntax</h3>
+<pre>
+start;
+while (condition) {
+    // code
+    change;
+}
+</pre>
+
+<h3>Example: Print 10 to 20</h3>
+<pre>
+let j = 10;
+while (j <= 20) {
+    console.log("j :", j);
+    j++;
+}
+</pre>
+
+<h3>Example: Print 20 to 10</h3>
+<pre>
+let k = 20;
+while (k >= 10) {
+    console.log("k :", k);
+    k--;
+}
+</pre>
+
+<h3>Example: Print 50 to 20</h3>
+<pre>
+let a = 50;
+while (a >= 20) {
+    console.log(a);
+    a--;
+}
+</pre>
+
+<h3>Example: Condition False (Loop Will Not Run)</h3>
+<pre>
+let b = 60;
+while (b <= 20) {
+    console.log("b :", b);
+    b++;
+}
+</pre>
+
+<h3>Example: Print Message Multiple Times</h3>
+<pre>
+let d = 0;
+while (d < 5) {
+    console.log("Hello");
+    d++;
+}
+</pre>
+
+<h3>Example: Print 50 to 60</h3>
+<pre>
+let f = 50;
+while (f <= 60) {
+    console.log("f :", f);
+    f++;
+}
+</pre>
+
+<hr>
+
+<h2>3. Do-While Loop</h2>
+<p>The <code>do-while</code> loop executes the code <b>at least once</b>,
+even if the condition is false.</p>
+
+<h3>Syntax</h3>
+<pre>
+do {
+    // code
+    change;
+} while (condition);
+</pre>
+
+<h3>Example: Print 10 to 20</h3>
+<pre>
+let g = 10;
+do {
+    console.log("do while :", g);
+    g++;
+} while (g <= 20);
+</pre>
+
+<h3>Example: Print 10 to 1</h3>
+<pre>
+let h = 10;
+do {
+    console.log("do while :", h);
+    h--;
+} while (h >= 1);
+</pre>
+
+<hr>
 
 </body>
 </html>

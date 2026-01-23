@@ -854,6 +854,355 @@ do {
 </pre>
 
 <hr>
+<h1>JavaScript Loops – Practice Examples</h1>
+<p>This file explains basic JavaScript loop examples using <b>for</b>, <b>while</b>, <b>break</b>, and <b>continue</b>.</p>
 
+<hr>
+
+<h2>Example 1: Print numbers from 1 to 10</h2>
+<pre>
+for (let a = 1; a <= 10; a++) {
+    console.log(a);
+}
+</pre>
+<p><b>Output:</b> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10</p>
+
+<hr>
+
+<h2>Example 2: Print numbers from 10 to 1 (while loop)</h2>
+<pre>
+let b = 10;
+while (b >= 1) {
+    console.log(b);
+    b--;
+}
+</pre>
+<p><b>Why:</b> The value decreases until it reaches 1.</p>
+
+<hr>
+
+<h2>Example 3: Print even numbers from 1 to 20</h2>
+<pre>
+for (let i = 1; i <= 20; i++) {
+    if (i % 2 === 0) {
+        console.log(i);
+    }
+}
+</pre>
+<p><b>Output:</b> 2, 4, 6, 8, 10, 12, 14, 16, 18, 20</p>
+
+<hr>
+
+<h2>Example 4: Print odd numbers from 1 to 15</h2>
+<pre>
+let i = 1;
+while (i <= 15) {
+    if (i % 2 !== 0) {
+        console.log(i);
+    }
+    i++;
+}
+</pre>
+
+<hr>
+
+<h2>Example 5: Multiplication table of 5</h2>
+<pre>
+for (let i = 1; i <= 10; i++) {
+    console.log(`5 x ${i} = ${5 * i}`);
+}
+</pre>
+
+<hr>
+
+<h2>Example 6: Sum of numbers from 1 to 100</h2>
+<pre>
+let sum = 0;
+for (let i = 1; i <= 100; i++) {
+    sum += i;
+}
+console.log(sum);
+</pre>
+<p><b>Output:</b> 5050</p>
+
+<hr>
+
+<h2>Example 7: Numbers divisible by 3 (1 to 50)</h2>
+<pre>
+for (let i = 1; i <= 50; i++) {
+    if (i % 3 === 0) {
+        console.log(i);
+    }
+}
+</pre>
+
+<hr>
+
+<h2>Example 8: Even or Odd (User Input)</h2>
+<pre>
+let num = prompt("Give a number");
+
+for (let i = 1; i <= num; i++) {
+    if (i % 2 === 0) {
+        console.log(i + " is even");
+    } else {
+        console.log(i + " is odd");
+    }
+}
+</pre>
+
+<hr>
+
+<h2>Example 9: Numbers divisible by 3 or 5 (1 to 100)</h2>
+<pre>
+for (let i = 1; i <= 100; i++) {
+    if (i % 3 === 0 || i % 5 === 0) {
+        console.log(i);
+    }
+}
+</pre>
+
+<hr>
+
+<h2>Example 10: Stop at first multiple of 7 (break)</h2>
+<pre>
+for (let i = 1; i <= 100; i++) {
+    console.log(i);
+    if (i % 7 === 0) {
+        break;
+    }
+}
+</pre>
+
+<hr>
+
+<h2>Example 11: Skip multiples of 3 (continue)</h2>
+<pre>
+for (let i = 1; i <= 20; i++) {
+    if (i % 3 === 0) {
+        continue;
+    }
+    console.log(i);
+}
+</pre>
+
+<hr>
+
+<h2>Example 12: Print first 5 odd numbers</h2>
+<pre>
+let count = 0;
+
+for (let i = 1; i <= 100; i++) {
+    if (i % 2 === 0) {
+        continue;
+    }
+    console.log(i);
+    count++;
+
+    if (count === 5) {
+        break;
+    }
+}
+</pre>
+<p><b>Output:</b> 1, 3, 5, 7, 9</p>
+
+<hr>
+
+<h1>JavaScript Functions – Complete Guide</h1>
+<p>This document explains JavaScript functions with examples including
+<b>function types</b>, <b>parameters</b>, <b>default & rest</b>,
+<b>first-class functions</b>, and <b>higher-order functions</b>.</p>
+
+<hr>
+
+<h2>What is a Function?</h2>
+<ul>
+    <li><b>What:</b> A function is a block of code that performs a specific task.</li>
+    <li><b>Why:</b> To avoid code repetition and make code reusable.</li>
+    <li><b>How:</b> Using function keyword, name, parameters, body, and return.</li>
+</ul>
+
+<hr>
+
+<h2>Types of Functions</h2>
+
+<h3>1. Function Declaration</h3>
+<pre>
+function abc() {}
+</pre>
+
+<h3>2. Function Expression</h3>
+<pre>
+let fnc = function () {}
+</pre>
+
+<h3>3. Arrow Function (Fat Arrow)</h3>
+<pre>
+let fnc1 = () => {}
+</pre>
+
+<hr>
+
+<h2>Function Example</h2>
+<pre>
+function temp_cart() {
+    console.log("adding product");
+}
+
+temp_cart("laptop");
+temp_cart("watch");
+temp_cart("mobile");
+</pre>
+
+<hr>
+
+<h2>Parameters vs Arguments</h2>
+<ul>
+    <li><b>Parameters:</b> Variables written in function definition</li>
+    <li><b>Arguments:</b> Actual values passed during function call</li>
+</ul>
+
+<pre>
+function cart(product) {
+    console.log(`Adding ${product}`);
+}
+
+cart("Laptop");
+cart("MacBook");
+</pre>
+
+<hr>
+
+<h2>Multiple Parameters</h2>
+<pre>
+function cart2(product, price) {
+    console.log(`Adding ${product} at ${price}`);
+}
+
+cart2("Laptop", 50000);
+cart2("MacBook", 250000);
+</pre>
+
+<hr>
+
+<h2>Arrow Function Example</h2>
+<pre>
+let Result1 = (name, marks) => {
+    console.log(`Adding ${name} at ${marks}`);
+};
+</pre>
+
+<h2>Function Expression Example</h2>
+<pre>
+const Result2 = function (name, marks) {
+    console.log(`Adding ${name} at ${marks}`);
+};
+</pre>
+
+<hr>
+
+<h2>Default Parameters</h2>
+<pre>
+function abcde(name, marks = 60) {
+    console.log(name, marks);
+}
+
+abcde("Ram");
+abcde("Rahul", 85);
+</pre>
+
+<hr>
+
+<h2>Rest Parameters</h2>
+<p>Used when passing multiple arguments without defining many parameters.</p>
+
+<pre>
+function def1(...numbers) {
+    console.log(numbers);
+}
+
+def1(1,2,3,4,5,6);
+</pre>
+
+<h3>Rest Parameter Example</h3>
+<pre>
+function def2(...products) {
+    console.log(products);
+}
+
+def2("Laptop", "TV", "Mobile", "AC");
+</pre>
+
+<hr>
+
+<h2>Early Return</h2>
+<pre>
+function getValue(value) {
+    if (value < 25) return "value is less than 25";
+    else if (value < 50) return "value is less than 50";
+    else if (value < 75) return "value is less than 75";
+    return "value is 100 or more";
+}
+
+console.log(getValue(80));
+</pre>
+
+<hr>
+
+<h2>First Class Functions</h2>
+<p>In JavaScript, functions are treated like variables.</p>
+
+<h3>1. Function Stored in Variable</h3>
+<pre>
+const cart5 = function (product, price) {
+    console.log(`Adding ${product} at ${price}`);
+};
+</pre>
+
+<h3>2. Function Passed as Argument</h3>
+<pre>
+function temp_b(fnc) {
+    fnc();
+}
+
+temp_b(function () {
+    console.log("First Class Function");
+});
+</pre>
+
+<h3>3. Function Returned from Another Function</h3>
+<pre>
+function abcde() {
+    return function () {
+        console.log("Function returned from another function");
+    };
+}
+
+abcde()();
+</pre>
+
+<hr>
+
+<h2>Higher Order Function (HOF)</h2>
+<p>
+A Higher Order Function is a function that
+<b>takes another function as an argument</b>
+or <b>returns a function</b>.
+</p>
+
+<pre>
+function multiply(x) {
+    return function (y) {
+        return x * y;
+    };
+}
+
+const multiply5 = multiply(5);
+console.log(multiply5(3));
+</pre>
+
+<p><b>Output:</b> 15</p>
+
+<hr>
 </body>
 </html>

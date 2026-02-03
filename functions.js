@@ -19,7 +19,7 @@ let fnc1 = () => {}
  temp_cart("mobile");
 
 // parameters vs arguments
-// parameters are the names listed inthe function definition(params --> () ni  andar lakheli values)
+// parameters are the names listed in the function definition(params --> () ni  andar lakheli values)
 // arguments are the real values passed to the function(args --> function call karti () ni adar lakheli(pass) kareli values)
 function cart(producat) { // producat -- params
     console.log(`Adding ${producat}`)
@@ -132,3 +132,277 @@ function multiply(x) {
 const multiply5 = multiply(5);
 console.log(multiply5(3));
 
+// pure vs impure function
+// pure function --> function je same input par same output aapse ane koi bahar na state ne modify na kare (pure function --> je function bahar na satae ne modify na kare)
+
+let a = 10;
+function abcd_pure(){
+    console.log("Hello");
+}
+
+// impure function --> function je same input par different output aapse athava bahar na state ne modify kare (impure function --> je function bahar na state ne modify kare)
+function abcd_impure() {
+    a++;
+    console.log(a);
+}
+
+// closure function
+// function je potana parent function na variables access kari shake (return thava valo function use karshe parent function na koi variable) (function within function)
+function outer() {
+    let count = 0;
+    function inner() {
+        count++; // accessing outer(parent) function variable
+        console.log(count);
+    }
+    return inner;
+}
+let fnc2 = outer();
+fnc2();
+
+// lexical scope --> nested function can access variables declared in their outer scope
+function outer1() {
+    let outer_var = "outer function variable";
+    function inner1() {
+        let inner_var = "inner function variable";
+        console.log(outer_var); // outer1 function variable write in console log
+        function most_inner() {
+            console.log(inner_var);
+            console.log(outer_var);
+            let most_inner_var = "most inner function variable";
+            function abc() {
+                console.log(most_inner_var);
+                console.log(inner_var);
+                console.log(outer_var);
+            }
+            abc();
+        }
+        most_inner();
+    }
+    inner1();
+}
+outer1();
+
+//  life - Immediately Invoked function Expression
+(function () {}) (); // function je declare karta j call thai jaye
+
+(function (){
+    console.log("This is LIFE Funcation");
+} () )
+
+// Hosting in function
+abcdef();
+
+function abcdef() {
+    console.log("This is hoisting function");
+}
+
+// hoistedFunction1();
+// let hoistedFunction1 = function () {
+// console.log("Hoisted Function Expression called");
+// }
+
+
+// hoistedFunction2();
+// let hoistedFunction2 = () => {
+// console.log("Hoisted Arrow Function called");
+// }
+
+// Example 1: 
+// What's the difference between function declaration and function expression in terms of hoisting?
+// Answer:Function declarations are hoisted completely.
+// Function expressions are stored in variables, and variables are hoisted as undefined.
+
+//  Example 2: 
+greet();
+function greet(){
+    console.log("Hello!");
+}
+// Answer:Hello!
+
+// Example 3: 
+// Convert normal function to Arrow Function
+function add(a, b){
+    return a + b;
+}
+// Answer:add(5,7) = 12
+
+//  Example 4: 
+// Identify what is parms and what is args
+function welcome(name){
+    console.log("Welcome " + name);
+}
+welcome("user");
+// Answer: Welcome user
+
+//  Example 5: 
+// how many parameters and args
+function temp (a, b, c){
+    console.log(a,b,c);
+}
+temp(1, 2)
+// Answer:1 2 undefined
+
+//  Example 6: 
+// Predict the output
+function temp_user(name = "Guest"){
+    console.log("Hello " + name);
+}
+temp_user();
+// Answer:Hello Guest
+
+// Example 7: 
+// what is ... operator and why use it  in function
+function number(...numbers){
+    console.log(numbers);
+}
+number(1, 2, 3, 4, 5)
+// Anwser:[1, 2, 3, 4, 5]
+
+// Example 8: 
+// Use rest Parameters to accept any number of scores and return the total
+function calculateTotal(...scores){
+    let total = 0;
+    for(let i=0; i<=scores.length; i++){
+        total += scores[i];
+    }
+    return total;
+}
+function calculateTotal(...scores){
+    let total = 0;
+    scores.forEach(function(val){
+        total = total + val;
+    });
+    return total;
+}
+calculateTotal(10, 20 ,30 ,40 ,50)
+sumTotal = calculateTotal(10, 20 ,30 ,40 ,50)
+// Answer: 150
+
+// Example 9: 
+// Fix the function using early return
+function checkAge(age){
+    if(age < 18){
+        return "Too Young";
+    }
+    return "Access Granted";
+}
+//Answer: "Too Young"
+
+// Example 10: 
+// What is the return value of above function
+function f(){ 
+    return;
+}
+// Answer:undefined
+
+
+//  Example 11: 
+// What does is mean when we say "functions are first-class citizens"?
+//Answer: Functions in JavaScript are treated like values.
+
+//  Example 12: 
+// Can You assign a function to a variable and then all it?
+let b = function(){console.log("Hello");}
+b();
+//Answer: Hello
+
+// Example 13:
+// Pass A function into anthor funtion and excute it inside
+
+function abcdefg(val){val()}
+abcdefg(function(){ console.log("Hello")})
+//Answer: Hello
+
+// Example 14: 
+// What is higer order function?
+// Answer: Accepts another function as an argument OR Returns a function
+
+//  Example 15: 
+// Identify what is higher order function?
+let result1 = [1,2,3].map(function(x){
+    return x * 2;
+});
+
+console.log(result1);
+// Answer: [2, 4, 6]
+
+//  Example 16: 
+//  pure or impure function?
+// let total = 5;
+// function num(num){
+//     total += num;
+// }
+// num(3);
+//Answer: 8
+
+//  Example 17:
+// convert example 16 function into pure function?
+let total = 5;
+function numPure(total, num){
+    return total + num;
+}
+let newTotal = numPure(total , 3);
+//Answer: 8
+
+//  Example 18: 
+// What is Closure? When is it created?
+function outer2(){
+    let x = 10;
+    return function(){
+        console.log(x);
+    }
+}
+//Answer: 10 undefined
+
+//  Example 19: 
+// What's logged?
+function outer(){
+    let count = 0;
+    return function(){
+        count++;
+        console.log(count);
+    };
+}
+const counter = outer()
+counter();
+counter();
+//Answer: 1 ,2 
+
+//  Example 20: 
+// Convert below function into an IIFE:
+function init(){
+    console.log("Initialized");
+}
+//Answer: Initialized
+
+//  Example 21: 
+// What is the use of IIFE? Name one real-world use case.
+let fun=(function(){
+    let score = 0; // this is private variable
+    return{
+        getScore: function(){
+            console.log(score);
+        },
+        setScore: function(val){
+            score = val;
+        }
+    }
+})()
+//Answer: 0
+// 10
+
+//  Example 22: 
+// What will be the output here and why?
+temp_var();
+var temp_var = function(){
+    console.log("Hello");
+}
+//Answer: Hello 
+
+// Example 23: 
+// What will be the output here and why?
+temp_var();
+function temp_var(){
+    console.log("Hello");
+}
+//Answer: Hello

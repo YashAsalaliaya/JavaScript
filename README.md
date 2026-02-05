@@ -1008,201 +1008,259 @@ for (let i = 1; i <= 100; i++) {
 
 <hr>
 
-<h1>JavaScript Functions – Complete Guide</h1>
-<p>This document explains JavaScript functions with examples including
-<b>function types</b>, <b>parameters</b>, <b>default & rest</b>,
-<b>first-class functions</b>, and <b>higher-order functions</b>.</p>
+<h1>📌 JavaScript Functions</h1>
+
+<p>
+A function is a reusable block of code that performs a specific task.
+</p>
 
 <hr>
 
-<h2>What is a Function?</h2>
+<h2>❓ What is a Function?</h2>
 <ul>
-    <li><b>What:</b> A function is a block of code that performs a specific task.</li>
-    <li><b>Why:</b> To avoid code repetition and make code reusable.</li>
-    <li><b>How:</b> Using function keyword, name, parameters, body, and return.</li>
+  <li><b>What:</b> A block of code that performs a specific task</li>
+  <li><b>Why:</b> Avoid code repetition, improve modularity & reusability</li>
+  <li><b>How:</b> <code>function</code> keyword, name, parameters, body, return</li>
 </ul>
 
 <hr>
 
-<h2>Types of Functions</h2>
+<h2>🔹 Types of Functions</h2>
 
-<h3>1. Function Declaration</h3>
+<h3>1️⃣ Function Declaration</h3>
 <pre>
 function abc() {}
 </pre>
 
-<h3>2. Function Expression</h3>
+<h3>2️⃣ Function Expression</h3>
 <pre>
 let fnc = function () {}
 </pre>
 
-<h3>3. Arrow Function (Fat Arrow)</h3>
+<h3>3️⃣ Arrow Function</h3>
 <pre>
 let fnc1 = () => {}
 </pre>
 
 <hr>
 
-<h2>Function Example</h2>
-<pre>
-function temp_cart() {
-    console.log("adding product");
-}
+<h2>🧩 Parameters vs Arguments</h2>
 
-temp_cart("laptop");
-temp_cart("watch");
-temp_cart("mobile");
-</pre>
-
-<hr>
-
-<h2>Parameters vs Arguments</h2>
 <ul>
-    <li><b>Parameters:</b> Variables written in function definition</li>
-    <li><b>Arguments:</b> Actual values passed during function call</li>
+  <li><b>Parameters:</b> Variables listed in function definition</li>
+  <li><b>Arguments:</b> Actual values passed during function call</li>
 </ul>
 
 <pre>
 function cart(product) {
-    console.log(`Adding ${product}`);
+  console.log("Adding " + product);
 }
-
 cart("Laptop");
-cart("MacBook");
 </pre>
 
 <hr>
 
-<h2>Multiple Parameters</h2>
-<pre>
-function cart2(product, price) {
-    console.log(`Adding ${product} at ${price}`);
-}
-
-cart2("Laptop", 50000);
-cart2("MacBook", 250000);
-</pre>
-
-<hr>
-
-<h2>Arrow Function Example</h2>
-<pre>
-let Result1 = (name, marks) => {
-    console.log(`Adding ${name} at ${marks}`);
-};
-</pre>
-
-<h2>Function Expression Example</h2>
-<pre>
-const Result2 = function (name, marks) {
-    console.log(`Adding ${name} at ${marks}`);
-};
-</pre>
-
-<hr>
-
-<h2>Default Parameters</h2>
+<h2>⚙️ Default Parameters</h2>
 <pre>
 function abcde(name, marks = 60) {
-    console.log(name, marks);
+  console.log(name, marks);
 }
-
-abcde("Ram");
-abcde("Rahul", 85);
 </pre>
 
 <hr>
 
-<h2>Rest Parameters</h2>
-<p>Used when passing multiple arguments without defining many parameters.</p>
+<h2>📦 Rest Parameters (...)</h2>
+<p>Used to accept unlimited arguments</p>
 
 <pre>
 function def1(...numbers) {
-    console.log(numbers);
+  console.log(numbers);
 }
-
-def1(1,2,3,4,5,6);
-</pre>
-
-<h3>Rest Parameter Example</h3>
-<pre>
-function def2(...products) {
-    console.log(products);
-}
-
-def2("Laptop", "TV", "Mobile", "AC");
 </pre>
 
 <hr>
 
-<h2>Early Return</h2>
+<h2>⏱ Early Return</h2>
 <pre>
-function getValue(value) {
-    if (value < 25) return "value is less than 25";
-    else if (value < 50) return "value is less than 50";
-    else if (value < 75) return "value is less than 75";
-    return "value is 100 or more";
+function checkAge(age){
+  if(age < 18) return "Too Young";
+  return "Access Granted";
 }
-
-console.log(getValue(80));
 </pre>
 
 <hr>
 
-<h2>First Class Functions</h2>
-<p>In JavaScript, functions are treated like variables.</p>
+<h2>🥇 First Class Functions</h2>
+<ul>
+  <li>Functions can be stored in variables</li>
+  <li>Functions can be passed as arguments</li>
+  <li>Functions can be returned from other functions</li>
+</ul>
 
-<h3>1. Function Stored in Variable</h3>
 <pre>
-const cart5 = function (product, price) {
-    console.log(`Adding ${product} at ${price}`);
-};
-</pre>
-
-<h3>2. Function Passed as Argument</h3>
-<pre>
-function temp_b(fnc) {
-    fnc();
+const cart5 = function(product, price) {
+  console.log(product, price);
 }
-
-temp_b(function () {
-    console.log("First Class Function");
-});
-</pre>
-
-<h3>3. Function Returned from Another Function</h3>
-<pre>
-function abcde() {
-    return function () {
-        console.log("Function returned from another function");
-    };
-}
-
-abcde()();
 </pre>
 
 <hr>
 
-<h2>Higher Order Function (HOF)</h2>
+<h2>🔁 Higher Order Functions (HOF)</h2>
 <p>
-A Higher Order Function is a function that
-<b>takes another function as an argument</b>
-or <b>returns a function</b>.
+A function that accepts another function as an argument or returns a function.
 </p>
 
 <pre>
 function multiply(x) {
-    return function (y) {
-        return x * y;
-    };
+  return function(y) {
+    return x * y;
+  };
 }
-
-const multiply5 = multiply(5);
-console.log(multiply5(3));
 </pre>
 
-<p><b>Output:</b> 15</p>
+<hr>
+
+<h2>🧼 Pure vs Impure Functions</h2>
+
+<h3>Pure Function</h3>
+<ul>
+  <li>Same input → Same output</li>
+  <li>No external state modification</li>
+</ul>
+
+<h3>Impure Function</h3>
+<ul>
+  <li>Modifies external state</li>
+</ul>
 
 <hr>
+
+<h2>🔐 Closures</h2>
+<p>
+A closure is created when an inner function accesses variables of its outer function even after the outer function has returned.
+</p>
+
+<pre>
+function outer() {
+  let count = 0;
+  return function() {
+    count++;
+    console.log(count);
+  };
+}
+</pre>
+
+<hr>
+
+<h2>📚 Lexical Scope</h2>
+<p>
+Inner functions can access variables from their outer scope.
+</p>
+
+<hr>
+
+<h2>⚡ IIFE (Immediately Invoked Function Expression)</h2>
+<pre>
+(function(){
+  console.log("Initialized");
+})();
+</pre>
+
+<h3>Use Case:</h3>
+<ul>
+  <li>Data privacy</li>
+  <li>Avoid global scope pollution</li>
+</ul>
+
+<hr>
+
+<h2>⬆️ Hoisting</h2>
+
+<h3>Function Declaration</h3>
+<p>Fully hoisted</p>
+
+<h3>Function Expression</h3>
+<p>Hoisted as undefined</p>
+
+<hr>
+
+<h2>🧠 Common Interview Examples</h2>
+
+<ul>
+  <li>Functions are first-class citizens</li>
+  <li>Rest operator (<code>...</code>) collects multiple arguments</li>
+  <li><code>return;</code> returns <code>undefined</code></li>
+</ul>
+
+<hr>
+
+<h2>✅ Array HOF Example</h2>
+<pre>
+let result = [1,2,3].map(x => x * 2);
+// [2, 4, 6]
+</pre>
+
+<hr>
+ <h1>JavaScript Array Methods Practice</h1>
+  <p>Open browser console to see output (Right click → Inspect → Console)</p>
+
+  <script>
+    // Array Basics
+    let arr = [1, 2, 3, 4, 5];
+    arr.push(6);
+    arr.pop();
+    arr.shift();
+    arr.unshift(10);
+    console.log("Array:", arr);
+
+    // splice vs slice
+    let nums = [10, 20, 30, 40, 50];
+    nums.splice(2, 1);
+    console.log("Splice:", nums);
+
+    let copyNums = nums.slice(1, 3);
+    console.log("Slice:", copyNums);
+
+    // map
+    let prices = [200, 400, 600];
+    let discounted = prices.map(p => p * 0.9);
+    console.log("Discounted Prices:", discounted);
+
+    // filter
+    let laptopPrices = [15000, 30000, 45000, 9000];
+    let expensive = laptopPrices.filter(p => p > 20000);
+    console.log("Expensive Laptops:", expensive);
+
+    // reduce
+    let cart = [499, 299, 199];
+    let total = cart.reduce((sum, price) => sum + price, 0);
+    console.log("Total Cart Price:", total);
+
+    // find
+    let products = ["Laptop", "Mobile", "Tablet", "Watch"];
+    let found = products.find(p => p === "Mobile");
+    console.log("Found Product:", found);
+
+    // some
+    let marks = [20, 35, 90];
+    let hasTopper = marks.some(m => m > 85);
+    console.log("Any Topper:", hasTopper);
+
+    // every
+    let passCheck = marks.every(m => m >= 40);
+    console.log("All Passed:", passCheck);
+
+    // Destructuring
+    let data = [1, 2, 3, 4];
+    let [a, , b] = data;
+    console.log("Destructured:", a, b);
+
+    // Spread Operator
+    let arr1 = [1, 2, 3];
+    let arr2 = [4, 5, 6];
+    let merged = [...arr1, ...arr2];
+    console.log("Merged Array:", merged);
+  </script>
+
 </body>
 </html>

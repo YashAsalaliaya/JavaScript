@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form to Card</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        form{
+            padding: 20px;
+        }
+        .card{
+            width: 250px;
+            height: auto;
+            border: 1px solid red;
+            margin: 10px 20px;
+            padding: 10px;
+            display: inline-block;
+        }
+        .dp_img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .dp_img img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create a Card</h1>
+    <form>
+        <input type="text" placeholder="paste link for profile image" /><br /><br />    <input type="text" placeholder="name"> <br /><br />
+        <input type="text" placeholder="bio" /><br /><br />
+        <input type="email" placeholder="email" /><br /><br />
+        <input type="tel" placeholder="phone number" /><br /><br />
+        <!-- <textarea placeholder="Write about you..."></textarea><br /><br /> -->
+        <input type="submit" value="submit" />
+    </form>
+    <!-- <div class="card">
+        <div class="dp-img">
+            <img src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D" alt="">
+        </div>
+        <h3>Username:</h3>
+        <h4>bio:</h4>
+        <h5>email:</h5>
+        <h6>phone Number:</h6>
+    </div> -->
+      <script src="submit.js"></script>
+</body>
+</html>
